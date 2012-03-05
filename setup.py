@@ -27,10 +27,7 @@
 
 
 import os
-from httpretty import version, HTTPretty
 from setuptools import setup
-
-HTTPretty.disable()
 
 
 def get_packages():
@@ -43,10 +40,11 @@ def get_packages():
     return packages
 
 setup(name='httpretty',
-    version=version,
+    version='0.4',
     description='HTTP client mock for Python',
-    author=u'Gabriel Falcao',
+    author='Gabriel Falcao',
     author_email='gabriel@nacaolivre.org',
     url='http://github.com/gabrielfalcao/httpretty',
-    packages=get_packages()
+    packages=get_packages(),
+    use_2to3=True,
 )
